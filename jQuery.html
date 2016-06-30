@@ -1,0 +1,24 @@
+## this will disappear the information between the <p> 
+
+
+<html xmlns= "http://www.w3.org/1999/xhtml" xml:lang ="en" lang= "en">
+  <head>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $("p").click(function(){
+               $(this).hide();
+      });
+      });
+     </script>
+    
+    
+    <title>jQuery Test</title>
+  </head>
+  <body>
+    <p> Look at me. I'm learning jQuery.</p>
+    <p> If you click on me, I will disappear.</p>
+    
+  </body>
+</html>
