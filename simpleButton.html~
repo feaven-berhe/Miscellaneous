@@ -1,0 +1,114 @@
+<html>
+  <head>
+     <title> simple button</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script>
+
+var mySimpleButton;
+var myBasicButton;
+var displayGraph; 
+//----------------------------------------------------------------------------------------------------
+$(document).ready(function()
+{
+    console.log("document is ready");
+    mySimpleButton = $("#mySimpleButton");
+    mySimpleButton.click(myButtonResponder);
+    myBasicButton =$("#myBasicButton");
+    myBasicButton.click(myAlert);
+    $("p").click(function(){
+    $(this).hide();
+    });
+    displayGraph = $("#displayGraph");
+    displayGraph.click(graph); 
+    
+
+});
+//----------------------------------------------------------------------------------------------------
+function myButtonResponder()
+{
+
+  console.log("executing myButtonResponder");
+
+var userChoice = prompt("Do you choose rock, paper or scissors?");
+
+
+var computerChoice = Math.random();
+     if (computerChoice < 0.34) {
+	computerChoice = "rock";
+			   }
+    else if(computerChoice <= 0.67) {
+	computerChoice = "paper";
+	}
+    else {
+	computerChoice = "scissors";
+	}
+
+console.log("Computer: " + computerChoice);
+var msg1 = "Paper Wins";
+var msg2 = "Rock Wins";
+var msg3 = "Scissors Wins";
+var msg0 = "The result is a tie!" 
+var compare = function (choice1,choice2){
+  if (choice1 === choice2){
+        return msg0 }
+    else if(choice1 === "rock"){
+        if (choice2 ==="paper"){
+            return msg1;}
+        else 
+            return "rock wins"; }
+    else if (choice1 == "paper"){
+        if (choice2 ==="rock"){
+            return msg1;}
+        else 
+            return msg3; }
+     else if (choice1 == "scissors"){
+        if (choice2 ==="rock"){
+            return msg2;}
+        else 
+            return msg3; }    
+}
+
+	    
+var winner =compare (userChoice, computerChoice); 
+
+
+
+$.createElement = function(winner){
+return$(
+	documents.creatElements(compare))}
+
+ 
+
+var div = document.createElement("div");
+div.appendChild(document.createTextNode(winner));
+document.body.appendChild(div);
+
+  
+} // myButtonResponder
+//----------------------------------------------------------------------------------------------------
+function myAlert()
+{
+console.log("executed myAlert"); 
+
+	alert("Okei dokei");
+}//myAlert
+//----------------------------------------------------------------------------------------------------
+function graph(x){
+console.log("executed graph");
+return Math.sin(x); 
+}
+
+
+//----------------------------------------------------------------------------------------------------
+</script>
+</head>
+
+<body>
+    <button id="mySimpleButton">Click Me!</button>
+    <button id="myBasicButton">Or Me!</button>
+    <p>What happens if you click on me</p>
+    <button id="displayGraph">Display</button> 
+</body>
+
+</html>

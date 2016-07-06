@@ -1,0 +1,8 @@
+<html xmlns= "http://www.w3.org/1999/xhtml" xml:lang ="en" lang= "en">
+  <head>
+    <title>jQuery Test</title>
+  </head>
+  <body>
+    <p> Look at me. I'm learning jQuery.</p>
+  </body>
+</html>

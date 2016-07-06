@@ -1,5 +1,277 @@
 *--------------------------------------------------------------------------------
-* emacs tips
+* Emacs tips
   we remapped the keyboard so that the control key is easy to reach
-*--------------------------------------------------------------------------------
+  Caps Lock Key - Control
+  Control Key - Command
   
+*--------------------------------------------------------------------------------
+* git tips
+
+  --- save new or changed file to the repo
+  git status # tell you what is new and untracked, or changed
+  git add notes.txt 
+  git commit -m "first version"
+  git push origin master
+
+*--------------------------------------------------------------------------------
+
+* Moving around in buffers
+
+C-f	Forward one character
+C-n	Next line
+C-b	Back one character
+C-p	Previous line
+Here are some ways to move around in larger increments:
+
+C-a	Beginning of line
+M-f	Forward one word
+M-a	Previous sentence
+M-v	Previous screen
+M-<	Beginning of buffer
+C-e	End of line
+M-b	Back one word
+M-e	Next sentence
+C-v	Next screen
+M->	End of buffer
+
+http://www.gnu.org/software/emacs/tour/
+
+if emacs stops responding to your commands you can stop it safely by using C-g
+
+c-x 1 One window (kills all other windows)
+
+	<DEL>        Delete the character just before the cursor
+	C-d   	     Delete the next character after the cursor
+
+	M-<DEL>      Kill the word immediately before the cursor
+	M-d	     Kill the next word after the cursor
+
+	C-k	     Kill from the cursor position to end of line
+	M-k	     Kill to the end of the current sentence
+
+
+C-y yanks the line that was last killed
+
+C-/ undoes
+
+C-x C-f finds a file
+
+C-x C-s
+
+
+	C-x C-f		Find file
+	C-x C-s		Save file
+	C-x s		Save some buffers
+	C-x C-b		List buffers
+	C-x b		Switch buffer
+	C-x C-c		Quit Emacs
+	C-x 1		Delete all but one window
+	C-x u		Undo
+	C-h f 		Describe a function. You type in the name of the function
+
+
+
+
+	C-x C-d 	short list of directory
+	C-x d		long list of directory
+
+
+to test out the different files...
+   	go to the directory
+	type ! open
+	
+	
+
+
+	M-x shell exits
+you can also test out the files in here by typing
+    	     	      	  open test.html
+
+
+plain text setting esc x fundamental mode
+
+
+jquery - a library that is used in javaScript
+       - <script src = "jquery.j"> </script>
+       - <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+
+
+*---------------------------------------------------------------------------------
+*jQuery tools
+
+
+$("p").hide()
+Demonstrates the jQuery hide() method, hiding all <p> elements.
+
+
+
+$("#test").hide()
+Demonstrates the jQuery hide() method, hiding the element with id="test".
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#test").hide();
+    });
+});
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+
+<p>This is a paragraph.</p>
+<p id="test">This is another paragraph.</p>
+
+<button>Click me</button>
+
+$(".test").hide()
+Demonstrates the jQuery hide() method, hiding all elements with class="test".
+
+$(document).ready(function(){
+    $("button").click(function(){
+        $(".test").hide();
+    });
+});
+</script>
+</head>
+<body>
+
+<h2 class="test">This is a heading</h2>
+
+<p class="test">This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button>Click me</button>
+ *************************** class ="test" hides several lines
+ 
+
+
+$(this).hide()
+Demonstrates the jQuery hide() method, hiding the current HTML element.
+
+
+*---------------------------------------------------------------------------------
+
+cat file.filetype		reads the file type
+R   				transfers you to R
+name <-read.table("file.filetype", sep="\t", header=TRUE)
+class(name)			"data.frame"
+
+**TOOLS
+
+dim(name)		dimensons of the table
+name			displays the table
+name[1,1]		displays data set from row 1, column 1
+
+
+
+Data Frame Column Vector
+displays data set from a particular column
+
+name[,x]		
+name[[9]]		
+name[["col"]]
+name$col
+name[,"col"]
+
+Data Frame Column Slice
+displays data set from a particular col/row w the headers
+
+
+name[col]
+name["col"]
+mtcars[c("col1", "col2")]
+
+Data Frame Row Slice
+displays data set from a particular row w headers
+
+name[col,]
+name[c(col1, col2),]
+name["Row Name", ]
+name[c("Row1", "Row2"]
+
+
+Logical Indexing....
+displays when the statement is true/false
+
+L = name$col == 0
+L
+[1] FALSE FALSE FALSE TRUE ..
+
+name[L,]  	displays a table w only what is true
+
+name[L,] $col dsiplays the particular col/row with the true
+
+
+//------------------------------------------------------------------------
+
+**window.onload
+
+
+examples:
+
+window.onload = function(){
+	      function name();
+	      function2();
+	      };
+
+goes within the script section, it is an alternative to the document ready function
+
+$document.ready(function(){
+		function name(); 
+});
+
+notes: the load event fires at the end of the document loading process... at this point, all of the objects in the document are in the DOM, and all the images, scripts, links and sub-frames have finished loading....
+
+
+//-------------------------------------
+what is the meaning of svg:svg
+namespace:tag
+
+
+Setting up the margins and graph area
+
+
+var margin ={top: 30, right:20, bottom: 30, left: 50}, // defines the four margins that surround the block where the graph will be... 30 pixels at the top, 20 to the right, etc 
+    width = 600- margin.left-margin.right;// this means that the width 600-50-20 = 530px
+    height=270-margin.top-margin.bottom;
+// this^^ defines the vanvas or the area where the graph and associated bits and pieces are placed
+
+var x =d3.scale.linear()
+
+
+Constructs a new linear scale with the default domain [0,1] and the default range [0,1]. Thus, the default linear scale is equivalent to the identity function for numbers; for example linear(0.5) returns 0.5.
+
+var main = chart.append('g')
+
+appends 'g' element to the SVG, g element is used to group svg shapes together... it is not d3 specific
+
+
+
+//-----------------------------------------------------------------
+R Code 06/20/2016
+
+R CMD INSTALL .
+installs to an R library
+
+cat DESCRIPTION
+gives a description of the package that was downloaded
+
+to edit Descriptions go to the directory
+
+source("http://bioconductor.org/biocLite.R")
+installs a package into the R library...
+
+biocLite(c("RUnit", "BiocGenerics"))
+this uses bioconductor to instal packages RUnit and BiocGenerics
+
+afterwards
+
+-print(load("tbl.neighborhoods.RData"))
+-dim(tbl.neighborhoods)
+-options(widht=300)
+-tbl.factors
+-tbl<-tbl.factors
+-lapply(tbl,mean)
+-lapply(tbl,mean/min/max/fivenum)

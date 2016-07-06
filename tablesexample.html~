@@ -1,0 +1,26 @@
+
+<html xmlns= "http://www.w3.org/1999/xhtml" xml:lang ="en" lang= "en">
+  <head>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src ="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"><script>
+    <script>
+      $(document).ready(function(){
+      $('#example').DataTable();  
+          
+
+      
+      });
+
+      
+     </script>
+    
+    
+     <title>Creating a Table</title>
+     </head>
+
+     <body>
+
+     </body>
+</html>
+
